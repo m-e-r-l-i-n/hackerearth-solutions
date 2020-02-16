@@ -20,7 +20,7 @@ class TestClass {
             res1+=(x[i]*i-sum1); 
             sum1+= x[i];
             res2+=(y[i]*i-sum2); 
-            sum1+= y[i];
+            sum2+= y[i];
              
         } 
         long s=res1+res2;
