@@ -1,16 +1,20 @@
 problem link-https://www.hackerearth.com/practice/algorithms/greedy/basics-of-greedy-algorithms/practice-problems/algorithm/the-friendly-bear-960ef1b2/
 
 import java.util.*;
-import java.math.*;
- 
+import java.io.*;
+
 class TestClass {
     public static void main(String args[] ) throws Exception {
-        Scanner sc= new Scanner(System.in);
-        int n=sc.nextInt();
+        BufferedReader bu=new BufferedReader(new InputStreamReader(System.in));
+        int n=Integer.parseInt(bu.readLine());
         long x[]=new long[n],y[]=new long[n]; int i;
+        
         for(i=0;i<n;i++)
-        {x[i]=sc.nextLong();
-        y[i]=sc.nextLong();}
+        {
+            String s[]=bu.readLine().split(" ");
+            x[i]=Long.parseLong(s[0]);
+            y[i]=Long.parseLong(s[1]);
+        }
         Arrays.sort(x); 
         Arrays.sort(y);
         
