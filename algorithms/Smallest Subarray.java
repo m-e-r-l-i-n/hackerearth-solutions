@@ -14,9 +14,8 @@ class TestClass {
         int e=0,st=0;
         while(e<n)
         {
-            while(sum<=x && e<n)
             sum+=a[e++];
-            while(sum>x && st<e)
+            while(sum>=x)
             {
                 if(e-st<mine-mins) {mine=e; mins=st;}
                 sum-=a[st++];
