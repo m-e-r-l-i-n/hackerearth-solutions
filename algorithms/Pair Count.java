@@ -2,9 +2,9 @@ problem link-https://www.hackerearth.com/problem/algorithm/pair-count-5/descript
 
 import java.io.*;
 import java.util.*;
-class TestClass 
+class TestClass
 {
-    public static void main(String args[])throws Exception 
+    public static void main(String args[])throws Exception
     {
         BufferedReader bu=new BufferedReader(new InputStreamReader(System.in));
         String s[]=bu.readLine().split(" ");
@@ -12,14 +12,14 @@ class TestClass
         long c=0;
         s=bu.readLine().split(" ");
         ArrayList<Integer> f=new ArrayList<>(); //to store factors
- 
+
         for(i=1;i*i<=d;i++) //finding factors in sqrt(n) time
-        if(d%i==0)
-        {
-            f.add(i);
-            if(d/i!=i) f.add(d/i);
-        }
-        
+            if(d%i==0)
+            {
+                f.add(i);
+                if(d/i!=i) f.add(d/i);
+            }
+
         for(i=0;i<n;i++)
         {
             a[i]=Integer.parseInt(s[i]);
@@ -31,20 +31,20 @@ class TestClass
         {
             int cnt=0,x=f.get(i);
             for(j=x;j<=1000000;j+=x)
-            cnt+=freq[j];
+                cnt+=freq[j];
             hm.put(f.get(i),cnt);
         }
-        
-	    for(i=0;i<n;i++) 
+
+        for(i=0;i<n;i++)
         {
-		    int div=d/a[i];
+            int div=d/a[i];
             c+=hm.getOrDefault(div,0);
-		    if(a[i]%div==0) --c;
-	    }
-	    c/=2;
+            if(a[i]%div==0) --c;
+        }
+        c/=2;
         System.out.print(c);
     }
- 
+
     static int gcd(int a,int b)
     {
         int t;
