@@ -13,6 +13,8 @@ class TestClass {
             k=Integer.parseInt(s[i]);
             c[k]++;
         }
+        
+        //nim game
         int cn=0,max=0;
         for(i=1;i<=100;i++)
         {
@@ -20,7 +22,7 @@ class TestClass {
             max=Math.max(max,c[i]);
         }
         
-        int m=(1<<(int)(Math.log(max)/Math.log(2)+1))-1;
+        int m=(1<<(int)(Math.log(max)/Math.log(2)+1))-1;    //we need to find number of subsets with 0 xor
         int a[]=new int[cn],j; 
         long dp[][]=new long[cn+1][m+1],M=1000000007;
         dp[0][0]=1; cn=0;
